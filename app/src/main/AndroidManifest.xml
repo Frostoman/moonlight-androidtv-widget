@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- This app targets Android TV. Touchscreen is not required. -->
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="true" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:banner="@drawable/app_banner"
+        android:icon="@drawable/app_banner"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:theme="@style/Theme.MoonlightWidget">
+
+        <!-- Launcher entry: shown in the Android TV "Apps" row -->
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- PIN pairing flow -->
+        <activity
+            android:name=".ui.PairActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MoonlightWidget.Pair"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".ui.RenameChannelActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MoonlightWidget.Pair"
+            android:screenOrientation="landscape" />
+
+        <activity
+            android:name=".ui.SelectGamesActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MoonlightWidget.GuidedStep"
+            android:screenOrientation="landscape" />
+
+        <!-- Exposes cached box-art PNGs to the TV launcher as content:// URIs -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.boxart"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!-- Background sync of the game list + box art into the home-screen channel -->
+        <receiver
+            android:name=".sync.BootReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.media.tv.action.INITIALIZE_PROGRAMS" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+</manifest>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Leanback browse theme for the in-app library screen -->
+    <style name="Theme.MoonlightWidget" parent="Theme.Leanback" />
+
+    <!-- Plain themed dialog-style theme for the pairing screen -->
+    <style name="Theme.MoonlightWidget.Pair" parent="Theme.AppCompat.NoActionBar" />
+
+    <!-- Checkbox list (game selection) -->
+    <style name="Theme.MoonlightWidget.GuidedStep" parent="Theme.Leanback.GuidedStep" />
+</resources>

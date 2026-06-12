@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Ukrainian / Українська -->
+<resources>
+    <string name="app_name">Ігри</string>
+    <string name="browse_title">Ігри</string>
+    <string name="row_games">Бібліотека</string>
+    <string name="row_settings">Налаштування</string>
+
+    <string name="action_add_pc">Додати / спарувати ПК</string>
+    <string name="action_resync">Оновити список ігор</string>
+    <string name="action_unpair">Видалити пару</string>
+    <string name="action_rename">Назва віджета</string>
+    <string name="action_select_games">Вибрати ігри</string>
+
+    <string name="select_games_title">Ігри у віджеті</string>
+    <string name="select_games_desc">Відмічені ігри показуються на головному екрані.</string>
+
+    <string name="rename_title">Назва на головному екрані</string>
+    <string name="rename_hint">Текст після «Ігри:» (порожнє — без тексту)</string>
+    <string name="rename_save">Зберегти</string>
+    <string name="rename_saved">Збережено</string>
+
+    <string name="pair_title">Парування з ПК (Sunshine)</string>
+    <string name="pair_hint_host">IP-адреса ПК (напр. 192.168.1.50)</string>
+    <string name="pair_connect">Підключитися</string>
+    <string name="pair_enter_pin">Введіть цей PIN у Sunshine:</string>
+    <string name="pair_success">Спарувалися! Синхронізую ігри…</string>
+    <string name="pair_wrong_pin">Невірний PIN. Спробуйте ще раз.</string>
+    <string name="pair_failed">Не вдалося спаруватися: %1$s</string>
+    <string name="pair_in_progress">Інший клієнт уже парується. Зачекайте.</string>
+
+    <string name="channel_name"></string>
+    <string name="no_pc">ПК не додано. Натисніть, щоб спарувати.</string>
+    <string name="moonlight_missing">Не встановлено Moonlight. Встановіть com.limelight.</string>
+
+    <string name="toast_unpaired">Пару видалено</string>
+    <string name="toast_synced">Синхронізовано ігор: %1$d</string>
+    <string name="error_network">помилка мережі</string>
+</resources>
