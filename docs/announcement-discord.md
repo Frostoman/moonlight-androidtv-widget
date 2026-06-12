@@ -30,6 +30,8 @@ interested is welcome to take it and adapt it to their own needs.
 
 GitHub: https://github.com/Frostoman/moonlight-sunshine-tv-widget
 
+**Pray for Ukraine!** 💙💛 🇺🇦
+
 ## Short version (if the channel prefers brevity)
 
 Made a tiny open-source **Android TV** app: it shows your **Sunshine** games on the home
