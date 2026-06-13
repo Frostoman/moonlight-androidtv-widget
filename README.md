@@ -1,4 +1,4 @@
-# Games — Android TV widget for Moonlight
+# Moonlight AndroidTV Widget
 
 A lightweight **Android TV** app that puts your PC game library — streamed from a
 **Moonlight-compatible host** — right on the home screen as a **preview channel** (the Android
