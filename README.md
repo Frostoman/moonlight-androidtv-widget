@@ -71,9 +71,9 @@ Both see the same PC `UUID` (from `/serverinfo`), so handing that UUID to Moonli
 
 ## Install
 
-1. Download the latest **`WidgetAndroidTV-x.y.apk`** from the [Releases](../../releases) page.
+1. Download the latest **`MoonlightAndroidTVWidget-x.y.apk`** from the [Releases](../../releases) page.
 2. Sideload it onto your Android TV, either:
-   - **ADB:** `adb connect <TV-IP>:5555` then `adb install WidgetAndroidTV-x.y.apk`, or
+   - **ADB:** `adb connect <TV-IP>:5555` then `adb install MoonlightAndroidTVWidget-x.y.apk`, or
    - **USB / file manager:** copy the APK to the TV and open it (enable "install from unknown sources").
 
 ## Setup
@@ -97,7 +97,7 @@ gradlew.bat assembleDebug
 ./gradlew assembleDebug
 ```
 
-The APK is produced at `app/build/outputs/apk/debug/WidgetAndroidTV-debug.apk`.
+The APK is produced at `app/build/outputs/apk/debug/MoonlightAndroidTVWidget-debug.apk`.
 Open the project in **Android Studio** for the easiest setup (it bundles a JDK).
 
 ## Known limitations

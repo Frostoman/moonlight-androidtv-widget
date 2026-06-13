@@ -2,12 +2,12 @@
 
 ## Simple description (tagline)
 
-> **Games** — an Android TV home-screen widget that shows your PC game library
+> **Moonlight Android TV Widget** — shows your PC game library on the home screen
 > and launches each game through Moonlight.
 
 ## Post (paste-ready)
 
-**Games — an Android TV home-screen widget for Moonlight** 🎮📺
+**Moonlight Android TV Widget** 🎮📺
 
 Hey everyone! I made a small open-source Android TV app that puts your **PC** game
 library right on the TV **home screen**, and launches each game through **Moonlight**.
