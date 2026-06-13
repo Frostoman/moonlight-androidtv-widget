@@ -1,8 +1,8 @@
-# Games — Android TV widget for Sunshine / Moonlight
+# Games — Android TV widget for Moonlight
 
 A lightweight **Android TV** app that puts your PC game library — streamed from a
-**[Sunshine](https://github.com/LizardByte/Sunshine)** host — right on the home screen as a
-**preview channel** (the Android TV "widget"). Selecting a game launches it through
+**Moonlight-compatible host** — right on the home screen as a **preview channel** (the Android
+TV "widget"). Selecting a game launches it through
 **[Moonlight](https://github.com/moonlight-stream/moonlight-android)**.
 
 > 🇺🇦 Українською: [README.uk.md](README.uk.md)
@@ -22,7 +22,7 @@ with it, so the source is open for anyone to take and adapt. 🙂
 
 ## Features
 
-- 🎮 Shows your Sunshine game library as cards on the Android TV **home screen** (preview channel).
+- 🎮 Shows your PC game library as cards on the Android TV **home screen** (preview channel).
 - 🖼️ Pulls **box art** for each game.
 - ▶️ One click **launches the game via Moonlight** (no built-in streaming — Moonlight does that).
 - ✅ **Per-game checkboxes** — choose which games appear in the widget.
@@ -40,7 +40,7 @@ with it, so the source is open for anyone to take and adapt. 🙂
 ## How it works
 
 ```
-This app ──(its own pairing: client cert + PIN)──► Sunshine on your PC
+This app ──(its own pairing: client cert + PIN)──► the host on your PC
    │  reads /applist + box art over the GameStream protocol
    ▼
 Local cache ──► Preview channel (cards) on the Android TV home screen
@@ -56,7 +56,7 @@ Moonlight streams the game
 
 Android sandboxes apps, so a non-rooted app **cannot read Moonlight's data**. Therefore:
 
-- **This app** pairs with Sunshine **on its own** (separate PIN) — only to read the game list and box art.
+- **This app** pairs with the host **on its own** (separate PIN) — only to read the game list and box art.
 - **Moonlight** must **also** be paired with the same PC — it does the actual streaming.
 
 Both see the same PC `UUID` (from `/serverinfo`), so handing that UUID to Moonlight's
@@ -66,7 +66,7 @@ Both see the same PC `UUID` (from `/serverinfo`), so handing that UUID to Moonli
 
 - Android TV **API 21+** (the home-screen channel requires **API 26+ / Android 8**).
 - **[Moonlight](https://play.google.com/store/apps/details?id=com.limelight)** installed on the TV, with your PC already added & paired in it.
-- A PC running **Sunshine** with **PIN pairing** enabled.
+- A PC running a **Moonlight-compatible host** with **PIN pairing** enabled.
 - Both devices on the same network.
 
 ## Install
@@ -78,10 +78,10 @@ Both see the same PC `UUID` (from `/serverinfo`), so handing that UUID to Moonli
 
 ## Setup
 
-1. In Sunshine on your PC, open the Web UI (usually `https://localhost:47990`) and keep the **PIN** tab ready.
+1. Open your host's Web UI (often at `https://localhost:47990`) and keep the **PIN** tab ready.
 2. On the TV, open **Games** → **Settings** row → **Add / pair PC**.
 3. Enter the PC's IP → **Connect** → a 4-digit PIN appears.
-4. Type that PIN into Sunshine. The game list syncs automatically.
+4. Type that PIN into your host's Web UI. The game list syncs automatically.
 5. Make sure the **same PC is also paired inside Moonlight** (it does the streaming).
 6. Add the **Games** channel to the home screen via the launcher's "Customize channels".
 7. Optional: **Settings → Select games** to choose which games show, and **Widget name** to set a label.
@@ -114,6 +114,6 @@ Open the project in **Android Studio** for the easiest setup (it bundles a JDK).
 
 Licensed under the **GNU General Public License v3.0** — see [LICENSE](LICENSE).
 
-The GameStream/Sunshine **pairing handshake and HTTP protocol** logic is ported from
+The GameStream **pairing handshake and HTTP protocol** logic is ported from
 **[moonlight-android](https://github.com/moonlight-stream/moonlight-android)** (GPLv3), which
 makes this project a derivative work and is why it is GPLv3.
