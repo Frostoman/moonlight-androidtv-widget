@@ -35,10 +35,10 @@
 
 *Від парування ПК до плиток ігор на головному екрані:*
 
-| 1. Додати / спарувати ПК | 2. Ввести IP ПК | 3. Ввести PIN |
+| Додати / спарувати ПК | Ввести IP ПК | Ввести PIN |
 |:--:|:--:|:--:|
 | ![](docs/screenshots/pair_add.png) | ![](docs/screenshots/pair_ip.png) | ![](docs/screenshots/pair_pin.png) |
-| **4. Бібліотека в застосунку** | **5. Вибір ігор** | **6. Віджет на головному екрані** |
+| **Бібліотека в застосунку** | **Вибір ігор** | **Віджет на головному екрані** |
 | ![](docs/screenshots/library.png) | ![](docs/screenshots/select_games.png) | ![](docs/screenshots/home_channel.png) |
 
 ## Як це працює
