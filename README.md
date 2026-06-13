@@ -33,9 +33,13 @@ with it, so the source is open for anyone to take and adapt. 🙂
 
 ## Screenshots
 
-| Home-screen widget | In-app library | Select games |
-|---|---|---|
-| ![](docs/screenshots/home_channel.png) | ![](docs/screenshots/library.png) | ![](docs/screenshots/select_games.png) |
+*From pairing your PC to game tiles on the home screen:*
+
+| 1. Add / pair PC | 2. Enter PC IP | 3. Enter PIN |
+|:--:|:--:|:--:|
+| ![](docs/screenshots/pair_add.png) | ![](docs/screenshots/pair_ip.png) | ![](docs/screenshots/pair_pin.png) |
+| **4. In-app library** | **5. Select games** | **6. Home-screen widget** |
+| ![](docs/screenshots/library.png) | ![](docs/screenshots/select_games.png) | ![](docs/screenshots/home_channel.png) |
 
 ## How it works
 
