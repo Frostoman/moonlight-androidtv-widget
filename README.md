@@ -33,8 +33,6 @@ with it, so the source is open for anyone to take and adapt. 🙂
 
 ## Screenshots
 
-*From pairing your PC to game tiles on the home screen:*
-
 | Add / pair PC | Enter PC IP | Enter PIN |
 |:--:|:--:|:--:|
 | ![](docs/screenshots/pair_add.png) | ![](docs/screenshots/pair_ip.png) | ![](docs/screenshots/pair_pin.png) |

@@ -33,8 +33,6 @@
 
 ## Скриншоти
 
-*Від парування ПК до плиток ігор на головному екрані:*
-
 | Додати / спарувати ПК | Ввести IP ПК | Ввести PIN |
 |:--:|:--:|:--:|
 | ![](docs/screenshots/pair_add.png) | ![](docs/screenshots/pair_ip.png) | ![](docs/screenshots/pair_pin.png) |
