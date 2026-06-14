@@ -75,6 +75,10 @@ class HostStore(private val context: Context) {
 
     fun boxArtFile(appId: Int): File = File(boxArtDir, "$appId.png")
 
+    /** Poster file for the home-screen "refresh" tile (lives alongside box art so the
+     *  FileProvider can serve it). The leading underscore keeps it clear of appId files. */
+    fun refreshTileFile(): File = File(boxArtDir, "_refresh.png")
+
     // ---- Per-game visibility (which games appear in the home-screen widget) ----
     // We store the HIDDEN ids; an empty set means everything is visible, so games
     // discovered in future syncs are shown by default.

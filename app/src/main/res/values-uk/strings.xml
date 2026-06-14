@@ -36,4 +36,7 @@
     <string name="toast_unpaired">Пару видалено</string>
     <string name="toast_synced">Синхронізовано ігор: %1$d</string>
     <string name="error_network">помилка мережі</string>
+
+    <string name="refresh_tile">Оновити</string>
+    <string name="refresh_started">Оновлюю список ігор…</string>
 </resources>

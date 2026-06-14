@@ -15,6 +15,7 @@ import com.androidtv.gameswidget.data.HostStore
 import com.androidtv.gameswidget.launch.MoonlightLauncher
 import com.androidtv.gameswidget.net.NvApp
 import com.androidtv.gameswidget.ui.MainActivity
+import com.androidtv.gameswidget.ui.RefreshActivity
 
 /**
  * Publishes the game list as a preview channel + program cards on the Android TV
@@ -78,6 +79,29 @@ class TvChannelPublisher(private val context: Context) {
                 .onSuccess { newIds.add(it) }
                 .onFailure { android.util.Log.e(TAG, "publish program '${game.appName}' failed", it) }
         }
+
+        // A "refresh" tile at the end of the channel: clicking it triggers a sync,
+        // so the game list can be refreshed without opening the app.
+        val refreshPoster = refreshPosterUri(store)
+        val refresh = PreviewProgram.Builder()
+            .setChannelId(channelId)
+            .setType(TvContractCompat.PreviewPrograms.TYPE_GAME)
+            .setTitle(context.getString(R.string.refresh_tile))
+            .setDescription("") // non-null avoids fromCursor NPE
+            .setIntent(Intent(context, RefreshActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+            .setInternalProviderId("_refresh")
+            .setPosterArtAspectRatio(TvContractCompat.PreviewPrograms.ASPECT_RATIO_MOVIE_POSTER)
+            .apply {
+                if (refreshPoster != null) {
+                    setPosterArtUri(refreshPoster)
+                    grantToLaunchers(refreshPoster)
+                }
+            }
+            .build()
+        runCatching { helper.publishPreviewProgram(refresh) }
+            .onSuccess { newIds.add(it) }
+            .onFailure { android.util.Log.w(TAG, "publish refresh tile failed", it) }
+
         writeProgramIds(newIds)
         android.util.Log.i(TAG, "publish: published ${newIds.size} programs")
     }
@@ -160,6 +184,26 @@ class TvChannelPublisher(private val context: Context) {
         if (!file.exists() || file.length() == 0L) return null
         return FileProvider.getUriForFile(context, "${context.packageName}.boxart", file)
     }
+
+    /**
+     * Poster art for the "refresh" tile. We rasterise the bundled vector icon to a PNG
+     * under the box-art dir and serve it through the same FileProvider the launcher
+     * already reads game box art from.
+     */
+    private fun refreshPosterUri(store: HostStore): android.net.Uri? = runCatching {
+        val file = store.refreshTileFile()
+        val w = 300
+        val h = 450
+        val bmp = android.graphics.Bitmap.createBitmap(w, h, android.graphics.Bitmap.Config.ARGB_8888)
+        val canvas = android.graphics.Canvas(bmp)
+        androidx.core.content.ContextCompat.getDrawable(context, R.drawable.ic_refresh_tile)?.apply {
+            setBounds(0, 0, w, h)
+            draw(canvas)
+        }
+        file.outputStream().use { bmp.compress(android.graphics.Bitmap.CompressFormat.PNG, 100, it) }
+        bmp.recycle()
+        FileProvider.getUriForFile(context, "${context.packageName}.boxart", file)
+    }.onFailure { android.util.Log.w(TAG, "refresh poster generation failed", it) }.getOrNull()
 
     // Best-effort: let common TV launchers read our box-art content URIs.
     private fun grantToLaunchers(uri: android.net.Uri) {

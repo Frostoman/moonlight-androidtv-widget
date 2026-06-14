@@ -52,6 +52,12 @@
             android:theme="@style/Theme.MoonlightWidget.GuidedStep"
             android:screenOrientation="landscape" />
 
+        <!-- Invisible trampoline launched by the home-screen "refresh" tile; triggers a sync -->
+        <activity
+            android:name=".ui.RefreshActivity"
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
         <!-- Exposes cached box-art PNGs to the TV launcher as content:// URIs -->
         <provider
             android:name="androidx.core.content.FileProvider"

@@ -38,4 +38,7 @@
     <string name="toast_unpaired">Pairing removed</string>
     <string name="toast_synced">Synced %1$d games</string>
     <string name="error_network">network error</string>
+
+    <string name="refresh_tile">Refresh</string>
+    <string name="refresh_started">Refreshing games…</string>
 </resources>

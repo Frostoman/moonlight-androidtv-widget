@@ -22,8 +22,8 @@ android {
         applicationId = "com.androidtv.gameswidget"
         minSdk = 21
         targetSdk = 34
-        versionCode = 7
-        versionName = "1.6"
+        versionCode = 8
+        versionName = "1.7"
     }
 
     // Output APK named "MoonlightAndroidTVWidget-<buildtype>.apk".
