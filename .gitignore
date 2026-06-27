@@ -26,3 +26,6 @@ keystore.properties
 
 # Local backup of Claude Code chat history (contains secrets — never commit)
 /_session-backup/
+
+# Design sources (Photoshop) — keep local, never publish
+/psd/
