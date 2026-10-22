@@ -7,6 +7,11 @@ TV "widget"). Selecting a game launches it through
 
 > 🇺🇦 Українською: [README.uk.md](README.uk.md)
 
+> ⚠️ **Maintenance notice:** I'm currently **not able to maintain this project**, so the app is
+> provided **as-is** and its continued functionality is **not guaranteed** — it may break with
+> newer Android TV versions, launchers, or Moonlight/host updates. The source is open (GPLv3), so
+> feel free to fork it and adapt it to your needs.
+
 ![Home screen channel](docs/screenshots/home_channel.png)
 
 ## About this project
