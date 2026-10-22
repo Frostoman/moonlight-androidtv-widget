@@ -1,16 +1,15 @@
 # Moonlight Android TV Widget
 
+> ⚠️ **Not actively maintained.** I can't maintain this project right now, so it's provided
+> **as is** and **there's no guarantee it works**: it may stop working at any time (for example,
+> after a Moonlight app update), and issues may go unanswered. You're welcome to fork it.
+
 A lightweight **Android TV** app that puts your PC game library — streamed from a
 **Moonlight-compatible host** — right on the home screen as a **preview channel** (the Android
 TV "widget"). Selecting a game launches it through
 **[Moonlight](https://github.com/moonlight-stream/moonlight-android)**.
 
 > 🇺🇦 Українською: [README.uk.md](README.uk.md)
-
-> ⚠️ **Maintenance notice:** I'm currently **not able to maintain this project**, so the app is
-> provided **as-is** and its continued functionality is **not guaranteed** — it may break with
-> newer Android TV versions, launchers, or Moonlight/host updates. The source is open (GPLv3), so
-> feel free to fork it and adapt it to your needs.
 
 ![Home screen channel](docs/screenshots/home_channel.png)
 
